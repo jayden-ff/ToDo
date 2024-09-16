@@ -1,0 +1,335 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2a2a2a;
+    --tertiary-color: #3a3a3a;
+    --accent-color: #ffffff;
+    --text-color: #f0f0f0;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.add-note {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-note input, .add-note textarea {
+    width: 97.59%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.add-note input:focus, .add-note textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.add-note textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.add-note-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.add-note-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+}
+
+.note-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.note-item {
+    background-color: var(--tertiary-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    word-wrap: break-word;
+    cursor: move;
+}
+
+.note-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-item.dragging {
+    opacity: 0.5;
+}
+
+.note-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.note-content {
+    flex-grow: 1;
+    white-space: pre-wrap;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.note-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-left: 10px;
+    font-size: 18px;
+    transition: transform var(--transition-speed);
+}
+
+.note-actions button:hover {
+    transform: scale(1.2);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--tertiary-color);
+    border-radius: var(--border-radius);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-speed);
+}
+
+.githubbutton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    background-color: rgb(31, 31, 31);
+    overflow: hidden;
+}
+
+.svgIcon {
+    transition-duration: .3s;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+}
+
+.githubbutton:hover {
+    width: 110px;
+    transition-duration: .4s;
+    border-radius: 30px;
+}
+
+.githubbutton:hover .text {
+    opacity: 1;
+    transition-duration: .4s;
+}
+
+.githubbutton:hover .svgIcon {
+    opacity: 0;
+    transition-duration: .3s;
+}
+
+.credits {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+.sidebar-icon {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-icon:hover {
+    background-color: var(--tertiary-color);
+}
+
+.sidebar-icon.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.sidebar-icon svg {
+    min-width: 24px;
+    margin-right: 15px;
+}
+
+.sidebar-icon span {
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .sidebar-icon span {
+    opacity: 1;
+}
+
+.main-content {
+    margin-left: 60px;
+    transition: margin-left 0.3s ease;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 96.3%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.modal-content textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons .save-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.modal-buttons .cancel-btn {
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+}
