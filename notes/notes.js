@@ -115,7 +115,6 @@
         }
     });
     
-    // Event-Listener für das Schließen des Modals, wenn außerhalb geklickt wird
     window.onclick = function(event) {
         const modal = document.getElementById('editModal');
         if (event.target == modal) {
