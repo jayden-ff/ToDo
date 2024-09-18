@@ -46,10 +46,6 @@ Contributions, issues, and feature requests are welcome! Feel free to create a p
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
-
-Created by Jayden - (https://github.com/ayd7x)
-
 ---
 
 ⭐️ If you like this project, please give it a star on GitHub! ⭐️
