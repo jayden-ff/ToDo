@@ -19,6 +19,12 @@ This project is a modern and user-friendly web application that combines a To-Do
 - 🗑️ Delete notes
 - 🔀 Drag-and-drop to reorder notes
 
+### Streaks
+- 💯 Count your good habit streak
+- ☝️ Dragable elements for a user friendly experience
+- ✒️ Edit your Habits after creating them
+- ♾️ Unlimited number of habits and free to use
+
 ## 🎨 Design
 
 - 🌓 Dark mode for comfortable night-time use
